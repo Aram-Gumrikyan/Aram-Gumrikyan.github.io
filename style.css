@@ -1,175 +1,3 @@
-.presentation {
-  position: relative;
-  width: 100%;
-  height: 572px;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.presentation .circle {
-  cursor: pointer;
-  width: 175px;
-  height: 175px;
-  border: 1px solid #0c5e8d;
-  border-radius: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.presentation .circle .circleChild {
-  width: 131px;
-  height: 131px;
-  border: 1px solid #0c5e8d;
-  border-radius: 90px;
-  background: linear-gradient(144.16deg, #0792e1 15.23%, #0f6fa6 88.07%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.presentation .circle .circleChild:hover {
-  transform: scale(1.35);
-}
-.presentation .circle .circleChild i {
-  font-size: 60px;
-  color: #fff;
-}
-.presentation .presentationBtn {
-  position: absolute;
-  bottom: 18px;
-  right: 69px;
-}
-.presentation .presentationBtn button {
-  cursor: pointer;
-  font-family: "Open Sans", sans-serif;
-  color: #fff;
-  border-radius: 200px;
-  font-size: 15px;
-  line-height: 20px;
-  letter-spacing: -0.5px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 7px 28px;
-  border: 0;
-}
-.presentation .presentationBtn button:focus {
-  outline: 0;
-}
-.presentation .presentationBtn button:hover {
-  transform: scale(1.2);
-}
-.presentation .presentationBtn .btn1 {
-  background: linear-gradient(101.41deg, #2897d7 0%, #1674aa 100%);
-}
-.presentation .presentationBtn .btn2 {
-  margin-left: 30px;
-  background-color: transparent;
-  border: 1px solid #0c5e8d;
-}
-
-h2 {
-  color: #0c5e8d;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  letter-spacing: -1.5px;
-  font-size: 60px;
-  line-height: 70px;
-  margin: 50px 0;
-}
-
-.newProducts {
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  color: #0c5e8d;
-  line-height: 21px;
-  font-weight: bold;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: space-around;
-}
-.newProducts .frame {
-  width: 338px;
-  height: 234px;
-  background-color: #e1e1e1;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.newProducts .frame .mainImg {
-  width: 294px;
-  height: 201px;
-  background-color: #c4c4c4;
-  border-radius: 15px;
-}
-.newProducts .frame .mainImg:hover {
-  width: 100%;
-  height: 100%;
-}
-.newProducts .frame + p {
-  margin-top: 30px;
-}
-.newProducts .product {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.newProducts .product:hover .praductBtn {
-  background-color: #2ecc71;
-  transform: scale(0.9);
-}
-.newProducts .praductBtn {
-  cursor: pointer;
-  margin-top: 30px;
-  font-size: 20px;
-  line-height: 23px;
-  width: 191px;
-  height: 52px;
-  border: 1px solid #1691c6;
-  box-sizing: border-box;
-  border-radius: 120px;
-  background-color: transparent;
-  transition: background-color 2s;
-}
-
-.h2_catalog {
-  margin-top: 98px;
-  margin-bottom: 27px;
-}
-
-.catalog {
-  margin: 0 56px;
-  position: relative;
-}
-.catalog .left,
-.catalog .right {
-  width: 373px;
-  height: 386px;
-  background: linear-gradient(270deg, #0c5e8d 8.65%, rgba(196, 196, 196, 0) 100%);
-  border-radius: 15px 0px 0px 15px;
-}
-.catalog .left {
-  transform: matrix(-1, 0, 0, 1, 0, 0);
-  position: absolute;
-  left: 0;
-}
-.catalog .right {
-  position: absolute;
-  right: 0;
-}
-
-@media screen and (max-width: 1200px) {
-  .newProducts {
-    grid-template-columns: 1fr 1fr;
-  }
-  .newProducts .product {
-    margin-bottom: 50px;
-  }
-}
-@media screen and (max-width: 800px) {
-  .newProducts {
-    grid-template-columns: 1fr;
-  }
-}
 * {
   margin: 0;
   padding: 0;
@@ -180,125 +8,94 @@ h2 {
   color: black;
 }
 
-html {
-  font-family: "Open Sans", sans-serif;
-}
-html button:focus {
+html button:focus,
+html input:focus {
   outline: 0;
 }
 
 header {
+  font-family: "Open Sans", sans-serif;
   width: 100%;
   min-height: 160px;
   display: flex;
   justify-content: space-between;
   background: radial-gradient(49.67% 49.67% at 50% 50.33%, #0c5e8d 0%, #5c9bbc 0%, #0c5e8d 100%);
 }
-header .logo_menu_name {
-  display: flex;
-}
-header .logo_menu_name .logo {
-  max-width: 200px;
-  min-width: 50px;
+header .logo {
+  min-width: 112px;
   height: 110px;
   margin-top: 22px;
   margin-left: 50px;
   margin-right: 23px;
 }
-header .logo_menu_name .logo img {
+header .logo img {
   width: 100%;
   height: 100%;
 }
-header .logo_menu_name .mainHeader {
+header .logo_menu_name {
+  display: flex;
+}
+header .mainHeader {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-header .logo_menu_name .mainHeader .campName_search {
-  max-width: 692px;
+header .campName_search {
+  width: 692px;
 }
-header .logo_menu_name .mainHeader .campName_search .campName {
-  font-size: 3.1vw;
+header .campName {
+  font-size: 60px;
   line-height: 82px;
   letter-spacing: -2px;
   color: #ffffff;
 }
-header .logo_menu_name .mainHeader .campName_search .search {
-  width: 35.5vmax;
+header .search {
+  width: 100%;
   font-size: 13px;
   display: flex;
   border: 1px solid white;
   border-radius: 15px;
   padding: 3px;
 }
-header .logo_menu_name .mainHeader .campName_search .search .searchBtn {
+header .searchBtn {
   float: left;
   cursor: pointer;
 }
-header .logo_menu_name .mainHeader .campName_search .search .searchInput {
+header .searchInput {
   width: 100%;
 }
-header .logo_menu_name .mainHeader .campName_search .search .searchInput::placeholder {
+header .searchInput::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
   opacity: 1;
   /* Firefox */
 }
-header .logo_menu_name .mainHeader .campName_search .search .searchBtn,
-header .logo_menu_name .mainHeader .campName_search .search .searchInput {
+header .searchBtn,
+header .searchInput {
   padding-left: 19px;
   color: white;
   border: 0;
   background-color: transparent;
 }
-header .logo_menu_name .mainHeader .menu {
-  display: flex;
-  margin-bottom: 15px;
-}
-header .logo_menu_name .mainHeader .menu div:first-child {
-  margin-left: 0;
-}
-header .logo_menu_name .mainHeader .menu div {
-  margin-left: 22px;
-}
-header .logo_menu_name .mainHeader .menu div a {
-  font-size: 13px;
-  line-height: 18px;
-  color: white;
-  text-decoration: none;
-}
-header .logo_menu_name .mainHeader .menu div a:hover {
-  color: black;
-}
-header .logo_menu_name .mainHeader .menu div .sale_more {
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-  transform: rotate(90deg) translateX(3px);
-  color: #ffffff;
-  margin-left: 1px;
-}
-header .logo_menu_name .mainHeader .menu div .sale_more:hover {
-  color: black;
-}
 header .moreHeader {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 17px;
-  display: grid;
-  grid-template-columns: 25% 50%;
-  grid-template-rows: 25% 25%;
   margin-top: 32px;
-  grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
 }
 header .moreHeader a {
   font-size: 13px;
   line-height: 18px;
   color: white;
   text-decoration: none;
+  transition: all 1s;
 }
 header .moreHeader a:hover {
-  color: black;
+  color: #f0932b;
+  border-bottom: 1px solid #ff7979;
 }
 header .moreHeader .lang_more,
 header .moreHeader .register_more {
@@ -311,14 +108,56 @@ header .moreHeader .register_more {
 }
 header .moreHeader .lang_more:hover,
 header .moreHeader .register_more:hover {
-  color: black;
+  color: #f0932b;
+  border-bottom: 1px solid #ff7979;
+}
+header .menu {
+  list-style-type: none;
+  width: 1040px;
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+header .menu a {
+  font-size: 13px;
+  line-height: 18px;
+  color: white;
+  text-decoration: none;
+  transition: all 1s;
+}
+header .menu a:hover {
+  color: #f0932b;
+  border-bottom: 1px solid #ff7979;
+}
+header .menu .sale_more {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transform: rotate(90deg) translateX(3px);
+  color: #ffffff;
+  margin-left: 1px;
+}
+header .menu .sale_more:hover {
+  color: #f0932b;
+  border-bottom: 1px solid #ff7979;
 }
 
-@media screen and (max-width: 1200px) {
-  .mainHeader .menu {
-    flex-wrap: wrap;
+@media (max-width: 1500px) {
+  header .menu {
+    width: 700px;
   }
-  .mainHeader .menu div:first-child {
-    margin-left: 22px !important;
+  header .menu a {
+    font-size: 10px;
+  }
+  header .campName {
+    font-size: 30px;
+  }
+  header .campName_search {
+    width: 346px;
+  }
+}
+@media (max-width: 1200px) {
+  header .menu {
+    display: none;
   }
 }

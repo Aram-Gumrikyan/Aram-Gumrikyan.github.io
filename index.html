@@ -1,113 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            rel="shortcut icon"
-            href="img/logo1.svg"
-            type="image/x-icon"
-            sizes="16x16 32x32"
-        />
-        <!-- google fonts -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="style.css" />
-        <title>WORLDWIDE OIL PORTAL</title>
-    </head>
-    <body>
-        <header>
-            <div class="logo_menu_name">
-                <div class="logo">
-                    <a href="index.html"
-                        ><img src="img/logo1.svg" alt="logo"
-                    /></a>
-                </div>
-                <div class="mainHeader">
-                    <div class="campName_search">
-                        <h1 class="campName">WORLDWIDE OIL PORTAL</h1>
-                        <div class="search">
-                            <button
-                                type="submit"
-                                class="searchBtn"
-                                formaction="#"
-                            >
-                                &#128269;
-                            </button>
-                            <input
-                                type="text"
-                                placeholder="Search"
-                                name="search"
-                                class="searchInput"
-                            />
-                        </div>
-                    </div>
 
-                    <ul class="menu">
-                        <li><a href="#" id="menuHref">Home</a></li>
-                        <li>
-                            <a href="#" class="menuHref">Sale</a
-                            ><button onclick="" class="sale_more">
-                                &#10095;
-                            </button>
-                        </li>
-                        <li><a href="#" class="menuHref">Rent</a></li>
-                        <li><a href="#" class="menuHref">Service</a></li>
-                        <li><a href="#" class="menuHref">Tender</a></li>
-                        <li><a href="#" class="menuHref">Auction</a></li>
-                        <li><a href="#" class="menuHref">Stocks</a></li>
-                        <li>
-                            <a href="#" class="menuHref">Investments</a>
-                        </li>
-                        <li><a href="#" class="menuHref">About us</a></li>
-                        <li><a href="#" class="menuHref">Job portal</a></li>
-                        <li><a href="#" class="menuHref">News</a></li>
-                        <li><a href="#" class="menuHref">Branches</a></li>
-                        <li><a href="#" class="menuHref">Contacts</a></li>
-                        <li><a href="#" class="menuHref">Forum</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="moreHeader">
-                <div class="lang" style="text-align: right;">
-                    <a href="#">En</a>
-                    <button onclick="" class="lang_more">&#10095;</button>
-                </div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.min.css">
+    <link rel="icon" type="image/pgn" href="img/logo.pgn">
+    <title>Home</title>
+</head>
+<!-- <img src="img/logo.JPG"> -->
 
-                <div class="log_reg">
-                    <a href="#">Log in</a
-                    ><i style="color: rgba(255, 255, 255, 0.4);">&#9474;</i
-                    ><a href="">Register</a
-                    ><button onclick="" class="register_more">
-                        &#10095;
+<body>
+    <header>
+        <div class="logo__name">
+            <div class="logo"></div>
+            <div class="name">mamon</div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Clients</a></li>
+                <li><a href="#">Our team</a></li>
+                <li><button class="contact__us__button" onclick="contact__us__div()">
+                        <div class="contact__us__button_text">Contact Us</div>
+                        <div class="contact__us__button__background"></div>
                     </button>
-                </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <h1 class="main__header__name">We're an independent development agency.</h1>
+        <p class="main__header__text">We understand the intricacies of web development inside-out. That's why we build rock-solid Mobile and Web applications enriched with user-centered visual experiences.</p>
+    </main>
+    <footer></footer>
+    <script type="text/javascript" src="script.min.js"></script>
+</body>
 
-                <div style="text-align: right;">
-                    <span style="color: rgba(90, 90, 90, 0.6);"
-                        >Registered</span
-                    >
-                </div>
-
-                <div>
-                    <span style="color: #fff;"
-                        >Companies: 20 from 9 countries Users: 48 from 13
-                        countries Online: 1</span
-                    >
-                </div>
-            </div>
-        </header>
-        <main class="tender"></main>
-        <script src="script.js"></script>
-    </body>
 </html>

@@ -1,1 +1,0 @@
-# Aram-Gumrikyan.github.io

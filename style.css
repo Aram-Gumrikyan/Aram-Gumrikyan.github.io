@@ -1,1 +1,1 @@
-*{margin:0;padding:0}.part0{width:100vw;height:100vh;background-image:url("img/img1.jpg");background-repeat:no-repeat;background-attachment:fixed;background-size:100% 100%}@media (max-width:500px){.part0{background-image:url("img/img00.png")}}
+*{margin:0;padding:0}.part{height:100vh;background-repeat:no-repeat;background-attachment:fixed;background-size:100vw 100vh}.part0{background-image:url("img/img1.jpg")}.part1{background-image:url("img/img2.jpg")}

@@ -1,1 +1,1 @@
-*{margin:0;padding:0}.part{height:100vh;background-repeat:no-repeat;background-attachment:fixed;background-size:100vw 100vh}.part0{background-image:url("img/img1.jpg")}.part1{background-image:url("img/img2.jpg")}
+*{margin:0;padding:0}.part{height:100vh;background-repeat:no-repeat;background-attachment:fixed;background-size:100vw 100vh}.part0{background-image:url("img/img1.jpg")}.part1{background-image:url("img/img2.jpg")}@media (max-width:425px){.part0{background-image:url("img/img01.png")}.part1{background-image:url("img/img02.png")}}

@@ -21,9 +21,12 @@
     /* background-size: cover;	 */
 }
 
-/* @media (max-width: 425px) {
+@media (max-width: 425px) {
     .part0 {
-        background-image: url("img/img00.png");
-    }
+        background-image: url("img/img01.png");
 
-} */
+    }
+    .part1{
+        background-image: url("img/img02.png");
+    }
+}

@@ -2,6 +2,10 @@ document.addEventListener("mouseover", function() {
     let eleman = document.getElementById('happyBrdey');
     eleman.autoplay = true;
 });
+
+let eleman = document.getElementById('happyBrdey');
+eleman.autoplay = true;
+
 // let width = window.innerWidth;
 // console.log(width);
 // let ballonWidth = (6 * width) / 100;

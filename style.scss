@@ -101,3 +101,41 @@ body {
         // font-size: 4vw;
     }
 }
+
+@media (max-width: 1440px) {
+    .b13 {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .b12 {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .b11 {
+        display: none;
+    }
+}
+
+@media (max-width: 425px) {
+    .b10 {
+        display: none;
+    }
+
+    .b9 {
+        display: none;
+    }
+
+    .b8 {
+        display: none;
+    }
+}
+
+@media (max-width: 320px) {
+    .b7 {
+        display: none;
+    }
+}

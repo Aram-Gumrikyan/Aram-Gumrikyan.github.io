@@ -1,6 +1,20 @@
+%btn {
+    font-weight: bold;
+    background-color: #5528ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
 * {
     box-sizing: border-box;
     font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -8,24 +22,10 @@ a {
     color: black;
 }
 
-%btn {
-    font-size: 14px;
-    font-weight: bold;
-    background-color: #5528ff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 4px 15px;
-    &:focus {
-        outline: 0;
-    }
-}
-
 header {
     max-width: 1180px;
     margin: 0 auto;
     display: flex;
-    padding: 0 15px;
     justify-content: space-between;
     align-items: center;
     padding-top: 50px;
@@ -60,11 +60,29 @@ header {
     }
     .nav_btn {
         @extend %btn;
+        font-size: 14px;
+        padding: 4px 15px;
+        border-radius: 5px;
     }
 }
 
-.main_btn {
-    @extend %btn;
+main {
+    max-width: 1180px;
+    margin: 115px auto 0;
+
+    .info_title {
+        font-size: 56px;
+        // font-size:
+        font-weight: bold;
+    }
+
+    .main_btn {
+        @extend %btn;
+        font-size: 24px;
+        padding: 16px 58px;
+        border-radius: 10px;
+        display: grid;
+    }
 }
 
 // font-family: 'Ubuntu', sans-serif;

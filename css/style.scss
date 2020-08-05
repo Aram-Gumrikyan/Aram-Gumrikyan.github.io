@@ -1,3 +1,8 @@
+$info_text_margin_top: calc(17.5px + 17.5 * ((100vw - 320px) / (1180 - 320)));
+$info_text_margin_bottom: calc(
+    2 * (17.5px + 17.5 * ((100vw - 320px) / (1180 - 320)))
+);
+
 %btn {
     font-weight: bold;
     background-color: #5528ff;
@@ -29,6 +34,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding-top: 50px;
+    position: relative;
 
     .logo {
         display: flex;
@@ -64,16 +70,49 @@ header {
         padding: 4px 15px;
         border-radius: 5px;
     }
+
+    .nav_control {
+        @extend %btn;
+        background-color: transparent;
+        color: #5528ff;
+        position: absolute;
+        right: 25px;
+        display: none;
+    }
+
+    @media (max-width: 700px) {
+        .nav {
+            display: none;
+        }
+        .nav_control {
+            display: block;
+        }
+    }
 }
 
 main {
     max-width: 1180px;
-    margin: 115px auto 0;
+    margin: 0 auto;
+    // margin-top: 115px;
+    margin-top: calc(50px + 65 * ((100vw - 320px) / (1180 - 320)));
 
     .info_title {
-        font-size: 56px;
-        // font-size:
+        // font-size: 56px;
+        font-size: calc(15px + 41 * ((100vw - 320px) / (1180 - 320)));
         font-weight: bold;
+    }
+
+    .info_text {
+        font-weight: 400;
+        // margin: 35px 0 70px;
+        // margin: $info_text_margin 0 calc(2 * $info_text_margin);
+        margin-top: $info_text_margin_top;
+        margin-bottom: $info_text_margin_bottom;
+        max-width: 745px;
+        // font-size: 32px;
+        font-size: calc(16px + 16 * ((100vw - 320px) / (1180 - 320)));
+        color: #4f4f4f;
+        text-align: justify;
     }
 
     .main_btn {
@@ -81,7 +120,25 @@ main {
         font-size: 24px;
         padding: 16px 58px;
         border-radius: 10px;
-        display: grid;
+
+        @media (max-width: 425px) {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    @media (min-width: 1180px) {
+        .info_title {
+            font-size: 56px;
+        }
+
+        .info_text {
+            font-size: 32px;
+        }
+
+        & {
+            margin-top: 115px;
+        }
     }
 }
 

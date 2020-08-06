@@ -3,6 +3,7 @@ $info_text_margin_bottom: calc(
     2 * (17.5px + 17.5 * ((100vw - 320px) / (1180 - 320)))
 );
 $adaptiv_harur: calc(40px + 60 * ((100vw - 320px) / (1180 - 320)));
+$adaptiv_hisun: calc((40px + 60 * ((100vw - 320px) / (1180 - 320))) / 2);
 $info_title_size: calc(15px + 41 * ((100vw - 320px) / (1180 - 320)));
 %btn {
     font-weight: bold;
@@ -174,7 +175,8 @@ main {
     }
 }
 
-.our_services {
+.our_services,
+.our_team {
     max-width: 1180px;
     margin: 0 auto;
     margin-top: $adaptiv_harur;
@@ -182,7 +184,8 @@ main {
     grid-template-columns: 1fr 1fr;
     grid-gap: 50px;
 
-    .service {
+    .service,
+    .employer {
         display: flex;
         align-items: center;
     }
@@ -196,7 +199,8 @@ main {
         }
     }
 
-    .service_title {
+    .service_title,
+    .employer_name {
         font-size: calc(16px + 12 * ((100vw - 320px) / (1180 - 320)));
         font-weight: 400;
 
@@ -207,7 +211,8 @@ main {
         }
     }
 
-    .service_text {
+    .service_text,
+    .employer_job {
         font-size: 14px;
         font-weight: 400;
         color: #b2b2b2;
@@ -227,6 +232,63 @@ main {
             grid-template-columns: 1fr;
         }
         .service {
+            margin: 0 auto;
+        }
+    }
+}
+
+.our_clients {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    margin-top: $adaptiv_hisun;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 50px;
+
+    @media (max-width: 760px) {
+        & {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        div {
+            margin: 0 auto;
+        }
+    }
+    @media (max-width: 500px) {
+        & {
+            grid-template-columns: 1fr;
+        }
+    }
+    @media (min-width: 1180px) {
+        & {
+            position: relative;
+            left: 70px;
+        }
+    }
+}
+
+.our_team {
+    grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: 800px) {
+        & {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .w9 {
+            position: relative;
+            left: 30vw;
+        }
+    }
+
+    @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+
+        .w9 {
+            position: static;
+        }
+
+        div {
             margin: 0 auto;
         }
     }

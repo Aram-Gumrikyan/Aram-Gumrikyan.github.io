@@ -9,6 +9,13 @@ main .main_btn:focus, header .nav_control:focus, header .nav_btn:focus {
   outline: 0;
 }
 
+footer .logo_img, header .logo_img {
+  width: 58px;
+  height: 58px;
+  background-image: url(../img/logo.svg);
+  margin-right: 25px;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -44,12 +51,6 @@ header .logo {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-header .logo_img {
-  width: 58px;
-  height: 58px;
-  background-image: url(../img/logo.svg);
-  margin-right: 25px;
 }
 header .logo_text {
   color: #202020;
@@ -248,7 +249,7 @@ main .str_end .p2 {
   grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 50px;
 }
-@media (max-width: 760px) {
+@media (max-width: 840px) {
   .our_clients {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
@@ -257,13 +258,13 @@ main .str_end .p2 {
     margin: 0 auto;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 540px) {
   .our_clients {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 }
-@media (min-width: 1180px) {
+@media (min-width: 1340px) {
   .our_clients {
     position: relative;
     left: 70px;
@@ -274,7 +275,7 @@ main .str_end .p2 {
   -ms-grid-columns: 1fr 50px 1fr 50px 1fr;
   grid-template-columns: repeat(3, 1fr);
 }
-@media (max-width: 800px) {
+@media (max-width: 840px) {
   .our_team {
     -ms-grid-columns: 1fr 50px 1fr;
     grid-template-columns: repeat(2, 1fr);
@@ -284,7 +285,7 @@ main .str_end .p2 {
     left: 30vw;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 540px) {
   .our_team {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -295,4 +296,46 @@ main .str_end .p2 {
   .our_team div {
     margin: 0 auto;
   }
+}
+
+footer {
+  background-color: #f7f7f7;
+  margin-top: calc(40px + 60 * ((100vw - 320px) / (1180 - 320)));
+}
+footer .main_footer {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (min-width: 1180px) {
+  footer {
+    margin-top: 100px;
+  }
+}
+
+.socila_sites {
+  background-color: transparent;
+}
+.socila_sites ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.socila_sites li {
+  margin-left: 40px;
+}
+.socila_sites li:first-child {
+  margin-left: 0;
 }

@@ -17,6 +17,13 @@ $info_title_size: calc(15px + 41 * ((100vw - 320px) / (1180 - 320)));
     }
 }
 
+%logo {
+    width: 58px;
+    height: 58px;
+    background-image: url(../img/logo.svg);
+    margin-right: 25px;
+}
+
 * {
     box-sizing: border-box;
     font-family: "Ubuntu", sans-serif;
@@ -44,10 +51,7 @@ header {
     }
 
     .logo_img {
-        width: 58px;
-        height: 58px;
-        background-image: url(../img/logo.svg);
-        margin-right: 25px;
+        @extend %logo;
     }
 
     .logo_text {
@@ -246,7 +250,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     grid-row-gap: 50px;
 
-    @media (max-width: 760px) {
+    @media (max-width: 840px) {
         & {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -254,12 +258,12 @@ main {
             margin: 0 auto;
         }
     }
-    @media (max-width: 500px) {
+    @media (max-width: 540px) {
         & {
             grid-template-columns: 1fr;
         }
     }
-    @media (min-width: 1180px) {
+    @media (min-width: 1340px) {
         & {
             position: relative;
             left: 70px;
@@ -270,7 +274,7 @@ main {
 .our_team {
     grid-template-columns: repeat(3, 1fr);
 
-    @media (max-width: 800px) {
+    @media (max-width: 840px) {
         & {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -281,7 +285,7 @@ main {
         }
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 540px) {
         grid-template-columns: 1fr;
 
         .w9 {
@@ -291,6 +295,45 @@ main {
         div {
             margin: 0 auto;
         }
+    }
+}
+
+footer {
+    background-color: #f7f7f7;
+    margin-top: $adaptiv_harur;
+
+    .main_footer {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo_img {
+        @extend %logo;
+    }
+
+    @media (min-width: 1180px) {
+        & {
+            margin-top: 100px;
+        }
+    }
+}
+.socila_sites {
+    background-color: transparent;
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+    }
+    li {
+        margin-left: 40px;
+    }
+
+    li:first-child {
+        margin-left: 0;
     }
 }
 // font-family: 'Ubuntu', sans-serif;

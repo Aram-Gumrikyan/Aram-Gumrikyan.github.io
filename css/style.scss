@@ -36,6 +36,10 @@ a {
     color: black;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 header {
     max-width: 1180px;
     margin: 0 auto;
@@ -192,6 +196,7 @@ main {
     .employer {
         display: flex;
         align-items: center;
+        overflow: hidden;
     }
 
     .icon {
@@ -334,6 +339,19 @@ footer {
 
     li:first-child {
         margin-left: 0;
+    }
+}
+
+[data-aos="heartBeat"] {
+    &.aos-animate {
+        animation: heartBeat 3s;
+        // animation-timing-function: ease-in-out;
+    }
+}
+
+[data-aos="fadeInLeft"] {
+    &.aos-animate {
+        animation: fadeInLeft 2s;
     }
 }
 // font-family: 'Ubuntu', sans-serif;

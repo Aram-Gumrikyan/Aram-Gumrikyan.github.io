@@ -29,6 +29,10 @@ a {
   color: black;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 header {
   max-width: 1180px;
   margin: 0 auto;
@@ -184,6 +188,7 @@ main .str_end .p2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 .our_services .icon,
 .our_team .icon {
@@ -338,4 +343,14 @@ footer .main_footer {
 }
 .socila_sites li:first-child {
   margin-left: 0;
+}
+
+[data-aos=heartBeat].aos-animate {
+  -webkit-animation: heartBeat 3s;
+          animation: heartBeat 3s;
+}
+
+[data-aos=fadeInLeft].aos-animate {
+  -webkit-animation: fadeInLeft 2s;
+          animation: fadeInLeft 2s;
 }

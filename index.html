@@ -11,6 +11,16 @@
             href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
             rel="stylesheet"
         />
+        <!-- animate.css -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+        />
+        <!-- AOS -->
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
         <!-- font-awesom 4.7 -->
         <link
             rel="stylesheet"
@@ -33,18 +43,18 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="arctic" />
     </head>
     <body>
-        <header>
+        <header class="animate__animated animate__bounce">
             <div class="logoBlock">
-                <a href="" class="logo">
+                <a href="#" class="logo">
                     <div class="logo_img"></div>
                     <span class="logo_text">mamon</span>
                 </a>
             </div>
             <nav>
                 <ul class="nav">
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Clients</a></li>
-                    <li><a href="">Our team</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Clients</a></li>
+                    <li><a href="#">Our team</a></li>
                     <li>
                         <button class="nav_btn" type="button">
                             Contact Us
@@ -60,7 +70,9 @@
             </button>
         </header>
         <main>
-            <section class="info">
+            <section
+                class="info animate__animated animate__bounceIn animate__slow"
+            >
                 <h1 class="info_title">
                     We're an independent development agency.
                 </h1>
@@ -78,7 +90,7 @@
                 <div class="p2">OUR SERVICES</div>
             </div>
             <section class="our_services">
-                <div class="service mob_devel">
+                <div class="service mob_devel" data-aos="fade-right">
                     <div class="icon">
                         <img src="img/smartphone.svg" alt="smartphon" />
                     </div>
@@ -91,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="service web_devel">
+                <div class="service web_devel" data-aos="fade-left">
                     <div class="icon">
                         <img src="img/monitor.svg" alt="monitor" />
                     </div>
@@ -104,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="service product_design">
+                <div class="service product_design" data-aos="fade-right">
                     <div class="icon">
                         <img src="img/layers.svg" alt="layers" />
                     </div>
@@ -117,7 +129,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="service quality_assurance">
+                <div class="service quality_assurance" data-aos="fade-left">
                     <div class="icon">
                         <img src="img/test.svg" alt="test" />
                     </div>
@@ -135,40 +147,52 @@
                 <div class="p2">OUR CLIENTS</div>
             </div>
             <section class="our_clients">
-                <div>
+                <div data-aos="zoom-in-up">
                     <img src="img/logo-lightspeed.svg" alt="lightspeed" />
                 </div>
-                <div><img src="img/logo-trvl.svg" alt="trvl" /></div>
-                <div>
+                <div data-aos="zoom-in-up">
+                    <img src="img/logo-trvl.svg" alt="trvl" />
+                </div>
+                <div data-aos="zoom-in-up">
                     <img
                         src="img/logo-spider-strategies.svg"
                         alt="spider strategies"
                     />
                 </div>
-                <div>
+                <div data-aos="zoom-in-up">
                     <img src="img/logo-tripadvisor.svg" alt="tripadvisor" />
                 </div>
-                <div>
+                <div data-aos="zoom-in-up">
                     <img src="img/logo-shutterfly.svg" alt="shutterfly" />
                 </div>
-                <div><img src="img/logo-decos.svg" alt="decos" /></div>
-                <div><img src="img/logo-tiqets.svg" alt="tiqets" /></div>
-                <div>
+                <div data-aos="zoom-in-up">
+                    <img src="img/logo-decos.svg" alt="decos" />
+                </div>
+                <div data-aos="zoom-in-up">
+                    <img src="img/logo-tiqets.svg" alt="tiqets" />
+                </div>
+                <div data-aos="zoom-in-up">
                     <img src="img/logo-hotelchamp.svg" alt="hatelchamp" />
                 </div>
-                <div>
+                <div data-aos="zoom-in-up">
                     <img src="img/logo-flitsmeister.svg" alt="flitsmeister" />
                 </div>
-                <div><img src="img/logo-sap.svg" alt="sap" /></div>
-                <div><img src="img/logo-redkix.svg" alt="redkix" /></div>
-                <div><img src="img/logo-nos.svg" alt="nos" /></div>
+                <div data-aos="zoom-in-up">
+                    <img src="img/logo-sap.svg" alt="sap" />
+                </div>
+                <div data-aos="zoom-in-up">
+                    <img src="img/logo-redkix.svg" alt="redkix" />
+                </div>
+                <div data-aos="zoom-in-up">
+                    <img src="img/logo-nos.svg" alt="nos" />
+                </div>
             </section>
             <div class="str_end">
                 <div class="p1"></div>
                 <div class="p2">OUR TEAM</div>
             </div>
             <section class="our_team">
-                <div class="employer w1">
+                <div class="employer w1" data-aos="heartBeat">
                     <div class="icon">
                         <img src="img/vadim.svg" alt="Vadim" />
                     </div>
@@ -179,7 +203,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="employer w2">
+                <div class="employer w2" data-aos="heartBeat">
                     <div class="icon">
                         <img src="img/sergry.svg" alt="Sergei" />
                     </div>
@@ -190,7 +214,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="employer w3">
+                <div class="employer w3" data-aos="heartBeat">
                     <div class="icon">
                         <img src="img/andrey.svg" alt="Andrey" />
                     </div>
@@ -201,7 +225,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="employer w4">
+                <div class="employer w4" data-aos="heartBeat">
                     <div class="icon">
                         <img src="img/alex.svg" alt="Alex" />
                     </div>
@@ -212,7 +236,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="employer w5">
+                <div class="employer w5" data-aos="heartBeat">
                     <div class="icon">
                         <img src="img/agneshka.svg" alt="Agneshka" />
                     </div>
@@ -223,7 +247,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="employer w6">
+                <div class="employer w6" data-aos="heartBeat">
                     <div class="icon">
                         <img src="img/dmitri.svg" alt="Dmitry" />
                     </div>
@@ -234,7 +258,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="employer w7">
+                <div class="employer w7" data-aos="heartBeat">
                     <div class="icon">
                         <img src="img/artiom.svg" alt="Artyom" />
                     </div>
@@ -245,7 +269,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="employer w8">
+                <div class="employer w8" data-aos="heartBeat">
                     <div class="icon">
                         <img src="img/evgeni.svg" alt="Evgeny" />
                     </div>
@@ -256,7 +280,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="employer w9">
+                <div class="employer w9" data-aos="heartBeat">
                     <div class="icon">
                         <img src="img/tom.svg" alt="Tom" />
                     </div>
@@ -269,25 +293,31 @@
                 </div>
             </section>
         </main>
-        <footer>
+        <footer data-aos="fadeInLeft">
             <div class="main_footer">
-                <div class="logo_img"></div>
+                <a href="#">
+                    <div class="logo_img"></div>
+                </a>
                 <div>
                     <nav class="socila_sites">
                         <ul>
                             <li>
-                                <a href=""
+                                <a href="#"
                                     ><img src="img/github.svg" alt="github"
                                 /></a>
                             </li>
                             <li>
-                                <a href=""><img src="img/be.svg" alt="be" /></a>
+                                <a href="#"
+                                    ><img src="img/be.svg" alt="be"
+                                /></a>
                             </li>
                             <li>
-                                <a href=""><img src="img/in.svg" alt="in" /></a>
+                                <a href="#"
+                                    ><img src="img/in.svg" alt="in"
+                                /></a>
                             </li>
                             <li>
-                                <a href=""
+                                <a href="#"
                                     ><img src="img/web.svg" alt="web"
                                 /></a>
                             </li>
@@ -296,6 +326,9 @@
                 </div>
             </div>
         </footer>
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!-- myJS -->
         <script src="js/script.js"></script>
     </body>
 </html>

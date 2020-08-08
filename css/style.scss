@@ -342,16 +342,22 @@ footer {
     }
 }
 
+[data-aos="bounceIn"] {
+    &.aos-animate {
+        animation: bounceIn 2s;
+    }
+}
+
 [data-aos="heartBeat"] {
     &.aos-animate {
         animation: heartBeat 3s;
-        // animation-timing-function: ease-in-out;
+        transform-origin: center bottom;
     }
 }
 
 [data-aos="fadeInLeft"] {
     &.aos-animate {
-        animation: fadeInLeft 1.5s;
+        animation: zoomIn 2s;
     }
 }
 // font-family: 'Ubuntu', sans-serif;

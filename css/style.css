@@ -345,12 +345,20 @@ footer .main_footer {
   margin-left: 0;
 }
 
+[data-aos=bounceIn].aos-animate {
+  -webkit-animation: bounceIn 2s;
+          animation: bounceIn 2s;
+}
+
 [data-aos=heartBeat].aos-animate {
   -webkit-animation: heartBeat 3s;
           animation: heartBeat 3s;
+  -webkit-transform-origin: center bottom;
+      -ms-transform-origin: center bottom;
+          transform-origin: center bottom;
 }
 
 [data-aos=fadeInLeft].aos-animate {
-  -webkit-animation: fadeInLeft 2s;
-          animation: fadeInLeft 2s;
+  -webkit-animation: zoomIn 2s;
+          animation: zoomIn 2s;
 }

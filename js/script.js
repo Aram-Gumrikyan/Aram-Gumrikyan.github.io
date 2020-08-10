@@ -21,9 +21,7 @@ AOS.init({
 
 let nav_controller = document.querySelector(".nav_control");
 let nav = document.querySelector(".nav");
-let body = document.querySelector(".body");
 let point = 0;
-let pointGlob = 0;
 nav_controller.addEventListener("click", controller);
 
 function controller() {
@@ -36,4 +34,21 @@ function controller() {
         nav_controller.classList.remove("nav_control_activ");
         nav.classList.remove("nav_mobile");
     }
+}
+
+let contact_us_btn = document.querySelectorAll(".contact_us_btn");
+let contact_us = document.querySelector(".contact_us");
+
+contact_us.addEventListener("click", contact_not_activ);
+
+for (i = 0; i < 2; i++) {
+    contact_us_btn[i].addEventListener("click", contact_activ);
+}
+
+function contact_activ() {
+    contact_us.classList.add("contact_us_activ");
+}
+
+function contact_not_activ() {
+    contact_us.classList.remove("contact_us_activ");
 }

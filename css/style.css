@@ -1,3 +1,24 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-track:hover {
+  background: #cdff0f;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5528ff;
+  border-radius: 30%;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #410fff;
+}
+
 main .main_btn, header .nav_control, header .nav_btn {
   font-weight: bold;
   background-color: #5528ff;
@@ -7,6 +28,18 @@ main .main_btn, header .nav_control, header .nav_btn {
 }
 main .main_btn:focus, header .nav_control:focus, header .nav_btn:focus {
   outline: 0;
+}
+
+main .main_btn, header .nav_btn {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+main .main_btn:hover, header .nav_btn:hover {
+  -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+          transform: scale(1.3);
+  background-color: #2867ff;
 }
 
 footer .logo_img, header .logo_img {
@@ -75,6 +108,30 @@ header .nav {
 header .nav > li {
   margin-left: 37px;
 }
+header .nav_li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .nav_li::after {
+  content: " ";
+  width: 0%;
+  height: 3px;
+  background-color: #5528ff;
+  -webkit-transition: width 0.5s;
+  -o-transition: width 0.5s;
+  transition: width 0.5s;
+}
+header .nav_li:hover::after {
+  width: 120%;
+}
 header .nav_btn {
   font-size: 14px;
   padding: 4px 15px;
@@ -86,14 +143,47 @@ header .nav_control {
   position: absolute;
   right: 25px;
   display: none;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
 }
 @media (max-width: 700px) {
   header .nav {
-    display: none;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: -400%;
+    left: 0;
+    width: 100%;
+    font-size: 28px;
+    background-color: #3498db;
+    padding: 50px;
+  }
+  header .nav > li {
+    margin-left: 0;
+    margin: 10px 0;
+    width: 100%;
   }
   header .nav_control {
     display: block;
   }
+  header .nav_btn {
+    display: block;
+    font-size: 28px;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+}
+header .nav_mobile {
+  top: 100%;
 }
 
 main {
@@ -130,6 +220,7 @@ main .main_btn {
 main .str_end {
   margin-top: calc(40px + 60 * ((100vw - 320px) / (1180 - 320)));
   position: relative;
+  z-index: -1;
 }
 main .str_end .p1 {
   width: 100%;
@@ -275,6 +366,19 @@ main .str_end .p2 {
     left: 70px;
   }
 }
+.our_clients div:hover img {
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.our_services .service:hover {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: #f1f2f6;
+  border-radius: 50px;
+}
 
 .our_team {
   -ms-grid-columns: 1fr 50px 1fr 50px 1fr;
@@ -301,6 +405,13 @@ main .str_end .p2 {
   .our_team div {
     margin: 0 auto;
   }
+}
+.our_team .employer:hover {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 50px;
+  background-color: #f1f2f6;
 }
 
 footer {
@@ -343,6 +454,12 @@ footer .main_footer {
 }
 .socila_sites li:first-child {
   margin-left: 0;
+}
+
+.nav_control_activ {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 [data-aos=bounceIn].aos-animate {

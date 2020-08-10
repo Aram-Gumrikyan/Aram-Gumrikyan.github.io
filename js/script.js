@@ -1,6 +1,3 @@
-function seyHi() {
-    alert("Aram");
-}
 AOS.init({
     // Global settings:
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -17,7 +14,26 @@ AOS.init({
     delay: 0, // values from 0 to 3000, with step 50ms
     duration: 1000, // values from 0 to 3000, with step 50ms
     easing: "ease", // default easing for AOS animations
-    once: false, // whether animation should happen only once - while scrolling down
+    once: true, // whether animation should happen only once - while scrolling down
     mirror: false, // whether elements should animate out while scrolling past them
     anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
 });
+
+let nav_controller = document.querySelector(".nav_control");
+let nav = document.querySelector(".nav");
+let body = document.querySelector(".body");
+let point = 0;
+let pointGlob = 0;
+nav_controller.addEventListener("click", controller);
+
+function controller() {
+    point++;
+    let calc = point % 2;
+    if (calc == 1) {
+        nav_controller.classList.add("nav_control_activ");
+        nav.classList.add("nav_mobile");
+    } else {
+        nav_controller.classList.remove("nav_control_activ");
+        nav.classList.remove("nav_mobile");
+    }
+}

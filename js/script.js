@@ -1,54 +1,84 @@
-AOS.init({
-    // Global settings:
-    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-    startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
-    initClassName: "aos-init", // class applied after initialization
-    animatedClassName: "aos-animate", // class applied on animation
-    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-
-    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-    offset: 70, // offset (in px) from the original trigger point
-    delay: 0, // values from 0 to 3000, with step 50ms
-    duration: 1000, // values from 0 to 3000, with step 50ms
-    easing: "ease", // default easing for AOS animations
-    once: true, // whether animation should happen only once - while scrolling down
-    mirror: false, // whether elements should animate out while scrolling past them
-    anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+let app = new Vue({
+    el: "#app",
+    data: {
+        languages: [
+            ["English", "en"],
+            ["Русский", "ru"],
+            ["Հայերեն", "am"],
+        ],
+        language: "en",
+        //
+        soc_sites: [
+            [
+                "facebook",
+                "<a href='https://www.facebook.com/profile.php?id=100010697918944'><i class='fab fa-facebook fa-2x'></i></a>",
+            ],
+            [
+                "instagram",
+                "<a href='https://www.facebook.com/profile.php?id=100010697918944'><i class='fab fa-instagram fa-2x'></i></a>",
+            ],
+            [
+                "facebook",
+                "<a href='https://www.facebook.com/profile.php?id=100010697918944'><i class='fab fa-facebook fa-2x'></i></a>",
+            ],
+            [
+                "facebook",
+                "<a href='https://www.facebook.com/profile.php?id=100010697918944'><i class='fab fa-facebook fa-2x'></i></a>",
+            ],
+        ],
+        //
+        themes: [
+            ["triangle", "circle"], //en
+            ["треугольник", "круг"], //ru
+            ["եռանկյունի", "շրջանագիծ"], //am
+        ],
+        theme: "",
+        //
+        triangle: [],
+        drowShapes: false,
+    },
+    methods: {
+        toSolve: function () {
+            this.drowShapes = true;
+        },
+    },
 });
 
-let nav_controller = document.querySelector(".nav_control");
-let nav = document.querySelector(".nav");
-let point = 0;
-nav_controller.addEventListener("click", controller);
+decideLanguage: {
+    function decideLanguage() {
+        let language = navigator.language;
+        if (language == "ru" || language == "am") {
+            app.language = language;
+        }
+    }
+    decideLanguage();
+}
 
-function controller() {
-    point++;
-    let calc = point % 2;
-    if (calc == 1) {
-        nav_controller.classList.add("nav_control_activ");
-        nav.classList.add("nav_mobile");
-    } else {
-        nav_controller.classList.remove("nav_control_activ");
-        nav.classList.remove("nav_mobile");
+wallet: {
+    document.querySelector(".wallet_icon").addEventListener("click", function () {
+        document.querySelector(".wallet_list").classList.toggle("wallet_list_active");
+    });
+    const wallets = ["yandex", "wme", "qiwi"];
+    function copytext(id) {
+        let yandex = document.querySelector(`.${wallets[id]}`);
+        yandex.select();
+        document.execCommand("copy");
     }
 }
 
-let contact_us_btn = document.querySelectorAll(".contact_us_btn");
-let contact_us = document.querySelector(".contact_us");
-
-contact_us.addEventListener("click", contact_not_activ);
-
-for (i = 0; i < 2; i++) {
-    contact_us_btn[i].addEventListener("click", contact_activ);
+parallax: {
+    let scene = document.querySelector("#scene");
+    let parallaxInstance = new Parallax(scene, {
+        relativeInput: true,
+    });
 }
 
-function contact_activ() {
-    contact_us.classList.add("contact_us_activ");
-}
-
-function contact_not_activ() {
-    contact_us.classList.remove("contact_us_activ");
+notprodaction: {
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    let width = document.documentElement.clientWidth;
+    let height = document.documentElement.clientHeight;
 }

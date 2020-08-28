@@ -2,339 +2,174 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-        <!-- fonts -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
-            rel="stylesheet"
-        />
-        <!-- animate.css -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-        />
-        <!-- AOS -->
-        <link
-            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-            rel="stylesheet"
-        />
-        <!-- font-awesom 4.7 -->
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-            crossorigin="anonymous"
-        />
-        <!-- css -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Solver</title>
+        <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
         <link rel="stylesheet" href="css/style.css" />
-        <!-- favicon -->
-        <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon" />
-        <title>MAMON</title>
-
-        <!-- Chrome, Firefox OS and Opera -->
-        <meta name="theme-color" content="#5528ff" />
-        <!-- Windows Phone -->
-        <meta name="msapplication-navbutton-color" content="#5528ff" />
-        <!-- iOS Safari -->
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="arctic" />
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+        <!-- parallax.js -->
+        <script src="js/js_library/parallax.min.js"></script>
+        <!-- vue.js -->
+        <script src="js/js_library/vue.js"></script>
     </head>
-    <body class="body">
-        <header data-aos="fade-down">
-            <div class="logoBlock">
-                <a href="#" class="logo">
-                    <div class="logo_img"></div>
-                    <span class="logo_text">mamon</span>
-                </a>
-            </div>
-            <nav>
-                <ul class="nav">
-                    <li class="nav_li"><a href="#">Services</a></li>
-                    <li class="nav_li"><a href="#">Clients</a></li>
-                    <li class="nav_li"><a href="#">Our team</a></li>
-                    <li>
-                        <button class="nav_btn contact_us_btn" type="button">
-                            Contact Us
+    <body>
+        <div id="app">
+            <header>
+                <div class="language_div">
+                    <div :class="language" id="language_img"></div>
+                    <select v-model="language" class="languageSelector">
+                        <option v-for="(item, index) in languages" :value="item[1]" class="languageOption">
+                            {{item[0]}}
+                        </option>
+                    </select>
+                </div>
+                <div class="wallet">
+                    <div class="wallet_icon">
+                        <i class="fas fa-wallet fa-2x"></i>
+                    </div>
+                    <div class="wallet_list">
+                        <div>
+                            Yandex.Money:<input class="yandex" value="410016454263240" /><i
+                                class="fas fa-copy"
+                                id="0"
+                                onclick="copytext(this.id)"
+                            ></i>
+                        </div>
+                        <div>
+                            WME:<input class="wme" value="E140423742372" /><i
+                                class="fas fa-copy"
+                                id="1"
+                                onclick="copytext(this.id)"
+                            ></i>
+                        </div>
+                        <div>
+                            QIWI:<input class="qiwi" value="+37494236200" /><i
+                                class="fas fa-copy"
+                                id="2"
+                                onclick="copytext(this.id)"
+                            ></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="soc_sites">
+                    <div v-for="(item, index) in soc_sites" v-html="item[1]"></div>
+                </div>
+            </header>
+            <main>
+                <div class="data">
+                    <div class="theme">
+                        <p v-if="language == 'en'" class="label">Choose a theme:</p>
+                        <p v-if="language == 'ru'" class="label">Выберите тему:</p>
+                        <p v-if="language == 'am'" class="label">Ընտրեք թեման:</p>
+                        <select v-model="theme" class="themeSelector">
+                            <option
+                                v-for="(theme, index) in themes[0]"
+                                :value="themes[0][index]"
+                                class="themeOption"
+                                v-if="language == 'en'"
+                            >
+                                {{theme}}
+                            </option>
+                            <option
+                                v-for="(theme, index) in themes[1]"
+                                :value="themes[0][index]"
+                                class="themeOption"
+                                v-if="language == 'ru'"
+                            >
+                                {{theme}}
+                            </option>
+                            <option
+                                v-for="(theme, index) in themes[2]"
+                                :value="themes[0][index]"
+                                class="themeOption"
+                                v-if="language == 'am'"
+                            >
+                                {{theme}}
+                            </option>
+                        </select>
+                    </div>
+                    <div v-if="theme == 'triangle'" class="triangle">
+                        <div class="cornerA">
+                            <p v-if="language == 'en'" class="label">Corner A:</p>
+                            <p v-if="language == 'ru'" class="label">Угол A:</p>
+                            <p v-if="language == 'am'" class="label">Անկյուն A:</p>
+                            <input type="number" placeholder="0" v-model="triangle[0]" />
+                        </div>
+                        <div class="cornerB">
+                            <p v-if="language == 'en'" class="label">Corner B:</p>
+                            <p v-if="language == 'ru'" class="label">Угол B:</p>
+                            <p v-if="language == 'am'" class="label">Անկյուն B:</p>
+                            <input type="number" placeholder="0" v-model="triangle[1]" />
+                        </div>
+                        <div class="cornerC">
+                            <p v-if="language == 'en'" class="label">Corner C:</p>
+                            <p v-if="language == 'ru'" class="label">Угол C:</p>
+                            <p v-if="language == 'am'" class="label">Անկյուն C:</p>
+                            <input type="number" placeholder="0" v-model="triangle[2]" />
+                        </div>
+                        <div class="sideAB">
+                            <p v-if="language == 'en'" class="label">Side (AB):</p>
+                            <p v-if="language == 'ru'" class="label">Сторона (AB):</p>
+                            <p v-if="language == 'am'" class="label">Կողմ (AB):</p>
+                            <input type="number" placeholder="0" v-model="triangle[3]" />
+                        </div>
+                        <div class="sideBC">
+                            <p v-if="language == 'en'" class="label">Side (bc):</p>
+                            <p v-if="language == 'ru'" class="label">Сторона (bc):</p>
+                            <p v-if="language == 'am'" class="label">Կողմ (bc):</p>
+                            <input type="number" placeholder="0" v-model="triangle[4]" />
+                        </div>
+                        <div class="sideCA">
+                            <p v-if="language == 'en'" class="label">Side (CA):</p>
+                            <p v-if="language == 'ru'" class="label">Сторона (CA):</p>
+                            <p v-if="language == 'am'" class="label">Կողմ (CA):</p>
+                            <input type="number" placeholder="0" v-model="triangle[5]" />
+                        </div>
+                        <div class="r">
+                            <p v-if="language == 'en'" class="label">Inscribed circle (r):</p>
+                            <p v-if="language == 'ru'" class="label">Вписанный круг (r):</p>
+                            <p v-if="language == 'am'" class="label">Ներգծած շրջանագիծ (r):</p>
+                            <input type="number" placeholder="0" v-model="triangle[6]" />
+                        </div>
+                        <div class="R">
+                            <p v-if="language == 'en'" class="label">Exported circle (R):</p>
+                            <p v-if="language == 'ru'" class="label">Очерченный круг (R):</p>
+                            <p v-if="language == 'am'" class="label">Արտագծած շրջանագիծ (R):</p>
+                            <input type="number" placeholder="0" v-model="triangle[7]" />
+                        </div>
+                        <div class="S">
+                            <p v-if="language == 'en'" class="label">Area (S):</p>
+                            <p v-if="language == 'ru'" class="label">Площадь (S):</p>
+                            <p v-if="language == 'am'" class="label">Մակերես (S):</p>
+                            <input type="number" placeholder="0" v-model="triangle[8]" />
+                        </div>
+                        <div class="P">
+                            <p v-if="language == 'en'" class="label">Perimeter (P):</p>
+                            <p v-if="language == 'ru'" class="label">Периметр (P):</p>
+                            <p v-if="language == 'am'" class="label">Պարագիծ (P):</p>
+                            <input type="number" placeholder="0" v-model="triangle[9]" />
+                        </div>
+                        <button class="btn_solve" onclick="start()">
+                            <p v-if="language == 'en'">Solve</p>
+                            <p v-if="language == 'ru'">Решить</p>
+                            <p v-if="language == 'am'">Լուծել</p>
                         </button>
-                    </li>
-                </ul>
-            </nav>
-            <button class="nav_control" type="button">
-                <i
-                    class="fa fa-chevron-circle-down fa-3x"
-                    aria-hidden="true"
-                ></i>
-            </button>
-        </header>
-        <main>
-            <section class="info" data-aos="bounceIn">
-                <h1 class="info_title">
-                    We're an independent development agency.
-                </h1>
-                <p class="info_text">
-                    We understand the intricacies of web development inside-out.
-                    That's why we build rock-solid Mobile and Web applications
-                    enriched with user-centered visual experiences.
-                </p>
-                <button class="main_btn contact_us_btn" type="button">
-                    Contact Us
-                </button>
-            </section>
-            <div class="str_end">
-                <div class="p1"></div>
-                <div class="p2">OUR SERVICES</div>
-            </div>
-            <section class="our_services">
-                <div class="service mob_devel" data-aos="fade-right">
-                    <div class="icon">
-                        <img src="img/smartphone.svg" alt="smartphon" />
-                    </div>
-                    <div>
-                        <div class="service_title">Mobile Development</div>
-                        <div class="service_text">
-                            We develop mobile apps for all contemporary mobile
-                            platforms. Mamon team builds native and
-                            cross-platform solutions.
-                        </div>
                     </div>
                 </div>
-                <div class="service web_devel" data-aos="fade-left">
-                    <div class="icon">
-                        <img src="img/monitor.svg" alt="monitor" />
-                    </div>
-                    <div>
-                        <div class="service_title">Web Development</div>
-                        <div class="service_text">
-                            Mamon offers full range of services from various CMS
-                            and frameworks based websites to complex ERP/CRM
-                            solutions and e-commerce stores.
-                        </div>
-                    </div>
+                <div class="drowShapes">
+                    <canvas id="canvas"></canvas>
                 </div>
-                <div class="service product_design" data-aos="fade-right">
-                    <div class="icon">
-                        <img src="img/layers.svg" alt="layers" />
-                    </div>
-                    <div>
-                        <div class="service_title">Product Design</div>
-                        <div class="service_text">
-                            We create design given the product audience, goal,
-                            business domain, technology and the platform for the
-                            solution.
-                        </div>
-                    </div>
-                </div>
-                <div class="service quality_assurance" data-aos="fade-left">
-                    <div class="icon">
-                        <img src="img/test.svg" alt="test" />
-                    </div>
-                    <div>
-                        <div class="service_title">Quality Assurance</div>
-                        <div class="service_text">
-                            Our QA team ensures high standard of quality of
-                            products delivered.
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="str_end">
-                <div class="p1"></div>
-                <div class="p2">OUR CLIENTS</div>
-            </div>
-            <section class="our_clients">
-                <div data-aos="zoom-in-up">
-                    <img src="img/logo-lightspeed.svg" alt="lightspeed" />
-                </div>
-                <div data-aos="zoom-in-up">
-                    <img src="img/logo-trvl.svg" alt="trvl" />
-                </div>
-                <div data-aos="zoom-in-up">
-                    <img
-                        src="img/logo-spider-strategies.svg"
-                        alt="spider strategies"
-                    />
-                </div>
-                <div data-aos="zoom-in-up">
-                    <img src="img/logo-tripadvisor.svg" alt="tripadvisor" />
-                </div>
-                <div data-aos="zoom-in-up">
-                    <img src="img/logo-shutterfly.svg" alt="shutterfly" />
-                </div>
-                <div data-aos="zoom-in-up">
-                    <img src="img/logo-decos.svg" alt="decos" />
-                </div>
-                <div data-aos="zoom-in-up">
-                    <img src="img/logo-tiqets.svg" alt="tiqets" />
-                </div>
-                <div data-aos="zoom-in-up">
-                    <img src="img/logo-hotelchamp.svg" alt="hatelchamp" />
-                </div>
-                <div data-aos="zoom-in-up">
-                    <img src="img/logo-flitsmeister.svg" alt="flitsmeister" />
-                </div>
-                <div data-aos="zoom-in-up">
-                    <img src="img/logo-sap.svg" alt="sap" />
-                </div>
-                <div data-aos="zoom-in-up">
-                    <img src="img/logo-redkix.svg" alt="redkix" />
-                </div>
-                <div data-aos="zoom-in-up">
-                    <img src="img/logo-nos.svg" alt="nos" />
-                </div>
-            </section>
-            <div class="str_end">
-                <div class="p1"></div>
-                <div class="p2">OUR TEAM</div>
-            </div>
-            <section class="our_team">
-                <div class="employer abcd w1" data-aos="heartBeat">
-                    <div class="icon">
-                        <img src="img/vadim.svg" alt="Vadim" />
-                    </div>
-                    <div>
-                        <div class="employer_name">Vadim</div>
-                        <div class="employer_job">
-                            Managing Director
-                        </div>
-                    </div>
-                </div>
-                <div class="employer w2" data-aos="heartBeat">
-                    <div class="icon">
-                        <img src="img/sergry.svg" alt="Sergei" />
-                    </div>
-                    <div>
-                        <div class="employer_name">Sergey</div>
-                        <div class="employer_job">
-                            Technology Director
-                        </div>
-                    </div>
-                </div>
-                <div class="employer w3" data-aos="heartBeat">
-                    <div class="icon">
-                        <img src="img/andrey.svg" alt="Andrey" />
-                    </div>
-                    <div>
-                        <div class="employer_name">Andrey</div>
-                        <div class="employer_job">
-                            Front-end Developer
-                        </div>
-                    </div>
-                </div>
-                <div class="employer w4" data-aos="heartBeat">
-                    <div class="icon">
-                        <img src="img/alex.svg" alt="Alex" />
-                    </div>
-                    <div>
-                        <div class="employer_name">Alex</div>
-                        <div class="employer_job">
-                            Front-end Developer
-                        </div>
-                    </div>
-                </div>
-                <div class="employer w5" data-aos="heartBeat">
-                    <div class="icon">
-                        <img src="img/agneshka.svg" alt="Agneshka" />
-                    </div>
-                    <div>
-                        <div class="employer_name">Agneshka</div>
-                        <div class="employer_job">
-                            Mobile Developer
-                        </div>
-                    </div>
-                </div>
-                <div class="employer w6" data-aos="heartBeat">
-                    <div class="icon">
-                        <img src="img/dmitri.svg" alt="Dmitry" />
-                    </div>
-                    <div>
-                        <div class="employer_name">Dmitry</div>
-                        <div class="employer_job">
-                            Back-end Developer
-                        </div>
-                    </div>
-                </div>
-                <div class="employer w7" data-aos="heartBeat">
-                    <div class="icon">
-                        <img src="img/artiom.svg" alt="Artyom" />
-                    </div>
-                    <div>
-                        <div class="employer_name">Artyom</div>
-                        <div class="employer_job">
-                            Back-end Developer
-                        </div>
-                    </div>
-                </div>
-                <div class="employer w8" data-aos="heartBeat">
-                    <div class="icon">
-                        <img src="img/evgeni.svg" alt="Evgeny" />
-                    </div>
-                    <div>
-                        <div class="employer_name">Evgeny</div>
-                        <div class="employer_job">
-                            Product Designer
-                        </div>
-                    </div>
-                </div>
-                <div class="employer w9" data-aos="heartBeat">
-                    <div class="icon">
-                        <img src="img/tom.svg" alt="Tom" />
-                    </div>
-                    <div>
-                        <div class="employer_name">Tom</div>
-                        <div class="employer_job">
-                            Product Designer
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer data-aos="fadeInLeft" data-aos-offset="20">
-            <div class="main_footer">
-                <a href="#">
-                    <div class="logo_img"></div>
-                </a>
-                <div>
-                    <nav class="socila_sites">
-                        <ul>
-                            <li>
-                                <a href="#"
-                                    ><img src="img/github.svg" alt="github"
-                                /></a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    ><img src="img/be.svg" alt="be"
-                                /></a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    ><img src="img/in.svg" alt="in"
-                                /></a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    ><img src="img/web.svg" alt="web"
-                                /></a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </footer>
-        <div class="contact_us">
-            <div class="main">
-                <div class="contact_img"></div>
-                <div class="phon_number">
-                    094 23 62 00
-                </div>
+            </main>
+            <!-- ended -->
+            <div id="scene">
+                <div class="astronomer" data-depth="1.3"></div>
+                <div class="moon" data-depth="0.5"></div>
             </div>
         </div>
-        <!-- AOS -->
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <!-- myJS -->
+
+        <script src="js/js_library/three.min.js"></script>
+        <script src="js/canvas.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>

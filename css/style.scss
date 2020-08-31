@@ -29,14 +29,24 @@
 @keyframes enter {
     0% {
         opacity: 0;
+        background-color: transparent;
         transform: scale(0);
     }
     70% {
         transform: scale(1.1);
+        background-color: transparent;
     }
     100% {
         opacity: 1;
         transform: scale(1);
+    }
+}
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -108,6 +118,8 @@ header {
             left: -370%;
             top: 150%;
             white-space: nowrap;
+            z-index: 3;
+            background-color: #000000;
             input {
                 background: transparent;
                 font-family: "Roboto", sans-serif;
@@ -135,6 +147,46 @@ header {
                 transform: scale(1.2);
             }
         }
+    }
+
+    @media (max-width: 1024px) {
+        display: none;
+        height: 100vh;
+        flex-direction: column;
+        z-index: 4;
+        background-color: #000000;
+        .soc_sites {
+            flex-direction: column;
+            align-items: center;
+        }
+        .wallet {
+            z-index: 4;
+        }
+    }
+}
+
+.mobile {
+    display: flex;
+    position: fixed;
+    top: 0;
+}
+
+.mob_header {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 4;
+
+    i {
+        animation: rotateIcon 15s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+
+    @media (max-width: 1024px) {
+        display: block;
     }
 }
 
@@ -177,6 +229,7 @@ main {
         max-width: 500px;
         min-width: 300px;
         margin: 0 auto;
+        margin-bottom: 20px;
         border: none;
         outline: none;
         color: #ffffff;
@@ -226,6 +279,10 @@ main {
     .themeOption {
         background-color: #000000;
         color: #ffffff;
+    }
+
+    p {
+        background-color: rgba($color: #000000, $alpha: 0.4);
     }
 }
 

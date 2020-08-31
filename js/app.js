@@ -7,7 +7,7 @@ let app = new Vue({
             ["Հայերեն", "am"],
         ],
         language: "en",
-        //
+
         soc_sites: [
             [
                 "facebook",
@@ -26,22 +26,22 @@ let app = new Vue({
                 "<a href='https://www.facebook.com/profile.php?id=100010697918944'><i class='fab fa-facebook fa-2x'></i></a>",
             ],
         ],
-        //
+
         themes: [
             ["triangle", "circle"], //en
             ["треугольник", "круг"], //ru
             ["եռանկյունի", "շրջանագիծ"], //am
         ],
         theme: "",
-        //
+
+        triangleShapes: [
+            ["rectangular", "equal sides 3", "equal sides 2"], //en
+            ["прямоугольный", "равные стороны 3", "равные стороны 2"], //ru
+            ["ուղղանկյուն", "հավասար կողմեր 3", "հավասար կողմեր 2"], //am
+        ],
         triangle: [],
-        drowShapes: false,
     },
-    methods: {
-        toSolve: function () {
-            this.drowShapes = true;
-        },
-    },
+    methods: {},
 });
 
 decideLanguage: {
@@ -70,6 +70,14 @@ parallax: {
     let scene = document.querySelector("#scene");
     let parallaxInstance = new Parallax(scene, {
         relativeInput: true,
+    });
+}
+
+mob_header: {
+    const header = document.querySelector("header");
+    const mob_header = document.querySelector(".mob_header");
+    mob_header.addEventListener("click", () => {
+        header.classList.toggle("mobile");
     });
 }
 

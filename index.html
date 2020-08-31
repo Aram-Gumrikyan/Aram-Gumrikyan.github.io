@@ -56,6 +56,7 @@
                     <div v-for="(item, index) in soc_sites" v-html="item[1]"></div>
                 </div>
             </header>
+            <div class="mob_header"><i class="fas fa-cog fa-2x"></i></div>
             <main>
                 <div class="data">
                     <div class="theme">
@@ -94,63 +95,112 @@
                             <p v-if="language == 'en'" class="label">Corner A:</p>
                             <p v-if="language == 'ru'" class="label">Угол A:</p>
                             <p v-if="language == 'am'" class="label">Անկյուն A:</p>
-                            <input type="number" placeholder="0" v-model="triangle[0]" />
+                            <input type="number" v-model="triangle[0]" />
                         </div>
                         <div class="cornerB">
                             <p v-if="language == 'en'" class="label">Corner B:</p>
                             <p v-if="language == 'ru'" class="label">Угол B:</p>
                             <p v-if="language == 'am'" class="label">Անկյուն B:</p>
-                            <input type="number" placeholder="0" v-model="triangle[1]" />
+                            <input type="number" v-model="triangle[1]" />
                         </div>
                         <div class="cornerC">
                             <p v-if="language == 'en'" class="label">Corner C:</p>
                             <p v-if="language == 'ru'" class="label">Угол C:</p>
                             <p v-if="language == 'am'" class="label">Անկյուն C:</p>
-                            <input type="number" placeholder="0" v-model="triangle[2]" />
+                            <input type="number" v-model="triangle[2]" />
                         </div>
                         <div class="sideAB">
                             <p v-if="language == 'en'" class="label">Side (AB):</p>
                             <p v-if="language == 'ru'" class="label">Сторона (AB):</p>
                             <p v-if="language == 'am'" class="label">Կողմ (AB):</p>
-                            <input type="number" placeholder="0" v-model="triangle[3]" />
+                            <input type="number" v-model="triangle[3]" />
                         </div>
                         <div class="sideBC">
-                            <p v-if="language == 'en'" class="label">Side (bc):</p>
-                            <p v-if="language == 'ru'" class="label">Сторона (bc):</p>
-                            <p v-if="language == 'am'" class="label">Կողմ (bc):</p>
-                            <input type="number" placeholder="0" v-model="triangle[4]" />
+                            <p v-if="language == 'en'" class="label">Side (BC):</p>
+                            <p v-if="language == 'ru'" class="label">Сторона (BC):</p>
+                            <p v-if="language == 'am'" class="label">Կողմ (BC):</p>
+                            <input type="number" v-model="triangle[4]" />
                         </div>
                         <div class="sideCA">
                             <p v-if="language == 'en'" class="label">Side (CA):</p>
                             <p v-if="language == 'ru'" class="label">Сторона (CA):</p>
                             <p v-if="language == 'am'" class="label">Կողմ (CA):</p>
-                            <input type="number" placeholder="0" v-model="triangle[5]" />
+                            <input type="number" v-model="triangle[5]" />
+                        </div>
+                        <div class="heigthTOAB">
+                            <p v-if="language == 'en'" class="label">Height to (AB):</p>
+                            <p v-if="language == 'ru'" class="label">Высота до (AB):</p>
+                            <p v-if="language == 'am'" class="label">Բարձրությունը դեպի (AB):</p>
+                            <input type="number" v-model="triangle[6]" />
+                        </div>
+                        <div class="heigthTOBC">
+                            <p v-if="language == 'en'" class="label">Height to (BC):</p>
+                            <p v-if="language == 'ru'" class="label">Высота до (BC):</p>
+                            <p v-if="language == 'am'" class="label">Բարձրությունը դեպի (BC):</p>
+                            <input type="number" v-model="triangle[7]" />
+                        </div>
+                        <div class="heigthTOCA">
+                            <p v-if="language == 'en'" class="label">Height to (CA):</p>
+                            <p v-if="language == 'ru'" class="label">Высота до (CA):</p>
+                            <p v-if="language == 'am'" class="label">Բարձրությունը դեպի (CA):</p>
+                            <input type="number" v-model="triangle[8]" />
                         </div>
                         <div class="r">
                             <p v-if="language == 'en'" class="label">Inscribed circle (r):</p>
                             <p v-if="language == 'ru'" class="label">Вписанный круг (r):</p>
                             <p v-if="language == 'am'" class="label">Ներգծած շրջանագիծ (r):</p>
-                            <input type="number" placeholder="0" v-model="triangle[6]" />
+                            <input type="number" v-model="triangle[9]" />
                         </div>
                         <div class="R">
                             <p v-if="language == 'en'" class="label">Exported circle (R):</p>
                             <p v-if="language == 'ru'" class="label">Очерченный круг (R):</p>
                             <p v-if="language == 'am'" class="label">Արտագծած շրջանագիծ (R):</p>
-                            <input type="number" placeholder="0" v-model="triangle[7]" />
+                            <input type="number" v-model="triangle[10]" />
                         </div>
                         <div class="S">
                             <p v-if="language == 'en'" class="label">Area (S):</p>
                             <p v-if="language == 'ru'" class="label">Площадь (S):</p>
                             <p v-if="language == 'am'" class="label">Մակերես (S):</p>
-                            <input type="number" placeholder="0" v-model="triangle[8]" />
+                            <input type="number" v-model="triangle[11]" />
                         </div>
                         <div class="P">
                             <p v-if="language == 'en'" class="label">Perimeter (P):</p>
                             <p v-if="language == 'ru'" class="label">Периметр (P):</p>
                             <p v-if="language == 'am'" class="label">Պարագիծ (P):</p>
-                            <input type="number" placeholder="0" v-model="triangle[9]" />
+                            <input type="number" v-model="triangle[12]" />
                         </div>
-                        <button class="btn_solve" onclick="start()">
+                        <div class="triangleShape">
+                            <p v-if="language == 'en'" class="label">Shape:</p>
+                            <p v-if="language == 'ru'" class="label">Форма:</p>
+                            <p v-if="language == 'am'" class="label">Ձևը:</p>
+                            <select v-model="triangle[13]" class="themeSelector">
+                                <option
+                                    v-for="(shape, index) in triangleShapes[0]"
+                                    :value="triangleShapes[0][index]"
+                                    class="themeOption"
+                                    v-if="language == 'en'"
+                                >
+                                    {{shape}}
+                                </option>
+                                <option
+                                    v-for="(shape, index) in triangleShapes[1]"
+                                    :value="triangleShapes[0][index]"
+                                    class="themeOption"
+                                    v-if="language == 'ru'"
+                                >
+                                    {{shape}}
+                                </option>
+                                <option
+                                    v-for="(shape, index) in triangleShapes[2]"
+                                    :value="triangleShapes[0][index]"
+                                    class="themeOption"
+                                    v-if="language == 'am'"
+                                >
+                                    {{shape}}
+                                </option>
+                            </select>
+                        </div>
+                        <button class="btn_solve" onclick="startCubeSolving()">
                             <p v-if="language == 'en'">Solve</p>
                             <p v-if="language == 'ru'">Решить</p>
                             <p v-if="language == 'am'">Լուծել</p>
@@ -169,7 +219,7 @@
         </div>
 
         <script src="js/js_library/three.min.js"></script>
-        <script src="js/canvas.js"></script>
-        <script src="js/script.js"></script>
+        <script src="js/triangle.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>

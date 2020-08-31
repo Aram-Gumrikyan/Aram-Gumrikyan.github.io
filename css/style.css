@@ -33,12 +33,14 @@ header #language_img {
 @-webkit-keyframes enter {
   0% {
     opacity: 0;
+    background-color: transparent;
     -webkit-transform: scale(0);
             transform: scale(0);
   }
   70% {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
+    background-color: transparent;
   }
   100% {
     opacity: 1;
@@ -50,17 +52,41 @@ header #language_img {
 @keyframes enter {
   0% {
     opacity: 0;
+    background-color: transparent;
     -webkit-transform: scale(0);
             transform: scale(0);
   }
   70% {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
+    background-color: transparent;
   }
   100% {
     opacity: 1;
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+@-webkit-keyframes rotateIcon {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateIcon {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -143,6 +169,8 @@ header .wallet .wallet_list {
   left: -370%;
   top: 150%;
   white-space: nowrap;
+  z-index: 3;
+  background-color: #000000;
 }
 
 header .wallet .wallet_list input {
@@ -178,6 +206,64 @@ header .soc_sites div:hover {
           box-shadow: 0 0 10px #ffffff;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+@media (max-width: 1024px) {
+  header {
+    display: none;
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    z-index: 4;
+    background-color: #000000;
+  }
+  header .soc_sites {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .wallet {
+    z-index: 4;
+  }
+}
+
+.mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+}
+
+.mob_header {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 4;
+}
+
+.mob_header i {
+  -webkit-animation: rotateIcon 15s;
+          animation: rotateIcon 15s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@media (max-width: 1024px) {
+  .mob_header {
+    display: block;
+  }
 }
 
 main {
@@ -249,6 +335,7 @@ main {
   max-width: 500px;
   min-width: 300px;
   margin: 0 auto;
+  margin-bottom: 20px;
   border: none;
   outline: none;
   color: #ffffff;
@@ -314,6 +401,10 @@ main {
 .data .themeOption {
   background-color: #000000;
   color: #ffffff;
+}
+
+.data p {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 #scene {

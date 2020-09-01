@@ -18,17 +18,18 @@ function main() {
         let material = new THREE.LineBasicMaterial({ color: 0xffffff });
         let points = [];
         let shape = app.triangle[13];
+
         if (shape == "rectangular") {
             points.push(new THREE.Vector3(-5, -10, 0));
             points.push(new THREE.Vector3(-5, 5, 0));
             points.push(new THREE.Vector3(10, -10, 0));
             points.push(new THREE.Vector3(-5, -10, 0));
-        } else if (shape == "equal sides (3)") {
+        } else if (shape == "equal sides 3") {
             points.push(new THREE.Vector3(-10, -5, 0));
             points.push(new THREE.Vector3(0, Math.sqrt(300) - 5, 0));
             points.push(new THREE.Vector3(10, -5, 0));
             points.push(new THREE.Vector3(-10, -5, 0));
-        } else if (shape == "equal sides (2)") {
+        } else if (shape == "equal sides 2") {
             points.push(new THREE.Vector3(-5, -10, 0));
             points.push(new THREE.Vector3(0, 10, 0));
             points.push(new THREE.Vector3(5, -10, 0));
@@ -53,6 +54,8 @@ function main() {
                 return item;
             }
         });
+        let haveAllSides =
+            TD[3] != undefined && TD[4] != undefined && TD[5] != undefined && TD[3] != 0 && TD[4] != 0 && TD[5] != 0;
 
         if (TD[13] == "equal sides 3") {
             TD[5] = TD[4] = TD[3];
@@ -60,18 +63,18 @@ function main() {
             TD[11] = TD[3] * TD[3] * (Math.sqrt(3) / 4);
         }
 
-        if (TD[3] != undefined && TD[4] != undefined && TD[5] != undefined) {
+        if (haveAllSides) {
             TD[12] = TD[3] + TD[4] + TD[5];
             TD[11] = Math.sqrt((TD[12] / 2) * (TD[12] / 2 - TD[3]) * (TD[12] / 2 - TD[4]) * (TD[12] / 2 - TD[5]));
         }
 
-        if (TD[3] != undefined && TD[6] != undefined) {
+        if (TD[3] != undefined && TD[6] != undefined && TD[3] != 0 && TD[6] != 0) {
             TD[11] = (TD[3] * TD[6]) / 2;
         }
-        if (TD[4] != undefined && TD[7] != undefined) {
+        if (TD[4] != undefined && TD[7] != undefined && TD[4] != 0 && TD[7] != 0) {
             TD[11] = (TD[4] * TD[7]) / 2;
         }
-        if (TD[5] != undefined && TD[8] != undefined) {
+        if (TD[5] != undefined && TD[8] != undefined && TD[5] != 0 && TD[8] != 0) {
             TD[11] = (TD[5] * TD[8]) / 2;
         }
         //
@@ -101,7 +104,7 @@ function main() {
         // to cheng by theme
         chenge: {
             if (app.theme != "triangle") {
-                return "";
+                app.triangle = [];
             }
         }
 
@@ -109,7 +112,6 @@ function main() {
 
         requestAnimationFrame(animate);
     }
-
     requestAnimationFrame(animate);
 }
 
